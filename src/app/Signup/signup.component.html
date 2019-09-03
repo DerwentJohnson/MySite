@@ -1,0 +1,39 @@
+<mat-card class="card">
+  <mat-toolbar id="header" color="primary">
+    <span>Sign-Up</span>
+  </mat-toolbar>
+    <form [formGroup]="myForm" id="form-container">
+      <mat-form-field>
+        <mat-label>Enter a username</mat-label>
+        <input matInput type="text" formControlName="userName">
+        <mat-error *ngIf="userName.invalid && userName.touched">
+          Username is invalid
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Enter Your Email address</mat-label>
+          <input matInput type="email" formControlName="email" id="userEmail" placeholder="email@domain.com">
+          <mat-error *ngIf="email.invalid && email.touched">
+            Email is invalid
+          </mat-error>
+        </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Enter Password</mat-label>
+          <input matInput type="password" formControlName="password">
+          <mat-error *ngIf="password.invalid && password.touched">
+            Password is invalid
+          </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Re-enter Password</mat-label>
+          <input matInput type="password" formControlName="password2">
+      </mat-form-field>
+
+
+      <button mat-raised-button type="submit" color="accent">Submit</button>
+    </form>
+</mat-card>
